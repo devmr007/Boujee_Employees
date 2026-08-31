@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "474856172725",
+    "project_id": "boujee-pet-services-a0f21",
+    "storage_bucket": "boujee-pet-services-a0f21.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474856172725:android:160336d3c4b9e21e7422fc",
+        "android_client_info": {
+          "package_name": "com.app.YasEmployees"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbAfh0Rj1wYxc3iPt-jp1Le6aMyy9OTLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
