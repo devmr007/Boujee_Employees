@@ -59,7 +59,7 @@ class ChatScreen extends StatelessWidget {
                   // User Name Title
                   Expanded(
                     child: Obx(
-                          () => CustomText(
+                      () => CustomText(
                         controller.activeConversation.value?.userName ?? 'Chat',
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
@@ -76,8 +76,11 @@ class ChatScreen extends StatelessWidget {
             // 2. Chat Messages Stream
             Expanded(
               child: Obx(
-                    () => ListView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+                () => ListView.builder(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 16.h,
+                  ),
                   itemCount: controller.chatMessages.length,
                   itemBuilder: (context, index) {
                     final message = controller.chatMessages[index];

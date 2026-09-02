@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class AuthService {
   // Storage Keys
   static const String _tokenKey = 'token';

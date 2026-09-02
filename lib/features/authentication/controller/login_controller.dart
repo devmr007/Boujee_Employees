@@ -121,7 +121,8 @@ class LoginController extends GetxController {
     CustomPopupDialog.show(
       context: context,
       title: "Password Reset\nSuccessfully",
-      description: "Password changed successfully, you can login again with new password",
+      description:
+          "Password changed successfully, you can login again with new password",
       iconPath: IconPath.shieldDone,
       isDoubleButton: false,
       primaryButtonText: "Done",

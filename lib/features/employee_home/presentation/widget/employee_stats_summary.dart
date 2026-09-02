@@ -23,7 +23,9 @@ class EmployeeStatsSummaryWidget extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
             decoration: BoxDecoration(
-              color: const Color(0xFFF6F5E8), // Subtle cream background from design
+              color: const Color(
+                0xFFF6F5E8,
+              ), // Subtle cream background from design
               borderRadius: BorderRadius.circular(18.r),
             ),
             child: Row(
@@ -32,7 +34,10 @@ class EmployeeStatsSummaryWidget extends StatelessWidget {
                 _buildStatItem('JOBS', '${stats?.totalJobs ?? 0}'),
                 _buildStatItem('COMPLETED', '${stats?.completedJobs ?? 0}'),
                 _buildStatItem('HOURS', '${stats?.hoursWorked ?? 0}h'),
-                _buildStatItem('EARNED', '\$${stats?.totalEarned.toInt() ?? 0}'),
+                _buildStatItem(
+                  'EARNED',
+                  '\$${stats?.totalEarned.toInt() ?? 0}',
+                ),
               ],
             ),
           );
@@ -43,8 +48,12 @@ class EmployeeStatsSummaryWidget extends StatelessWidget {
         // Clock In / Clock Out Button
         Obx(() {
           final isClockedIn = controller.isClockedIn.value;
-          final buttonColor = isClockedIn ? const Color(0xFFDFF1D3) : const Color(0xFFC78382);
-          final textColor = isClockedIn ? const Color(0xFF4CAF50) : const Color(0xFFE53935);
+          final buttonColor = isClockedIn
+              ? const Color(0xFFDFF1D3)
+              : const Color(0xFFC78382);
+          final textColor = isClockedIn
+              ? const Color(0xFF4CAF50)
+              : const Color(0xFFE53935);
           final statusText = isClockedIn ? 'Clock In' : 'Clock Out';
 
           return GestureDetector(

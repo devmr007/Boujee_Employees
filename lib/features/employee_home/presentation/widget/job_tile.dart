@@ -8,11 +8,7 @@ class JobTile extends StatelessWidget {
   final JobModel job;
   final VoidCallback? onTap;
 
-  const JobTile({
-    super.key,
-    required this.job,
-    this.onTap,
-  });
+  const JobTile({super.key, required this.job, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +22,7 @@ class JobTile extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: Colors.grey.shade200,
-            width: 1.w,
-          ),
+          border: Border.all(color: Colors.grey.shade200, width: 1.w),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -114,7 +107,10 @@ class JobTile extends StatelessWidget {
               children: [
                 // Status Badge
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: statusStyle.backgroundColor,
                     borderRadius: BorderRadius.circular(12.r),
@@ -149,21 +145,21 @@ class JobTile extends StatelessWidget {
       case 'ACCEPTED':
         return _StatusStyle(
           backgroundColor: const Color(0xFFEFF6FF), // Soft Blue
-          textColor: const Color(0xFF3B82F6),       // Blue Text
-          dotColor: const Color(0xFF4CAF50),        // Green Dot
+          textColor: const Color(0xFF3B82F6), // Blue Text
+          dotColor: const Color(0xFF4CAF50), // Green Dot
         );
       case 'COMPLETED':
         return _StatusStyle(
           backgroundColor: const Color(0xFFE8F5E9), // Soft Green
-          textColor: const Color(0xFF2E7D32),       // Dark Green Text
-          dotColor: const Color(0xFF4CAF50),        // Green Dot
+          textColor: const Color(0xFF2E7D32), // Dark Green Text
+          dotColor: const Color(0xFF4CAF50), // Green Dot
         );
       case 'ASSIGNED':
       default:
         return _StatusStyle(
           backgroundColor: const Color(0xFFF1F5F9), // Soft Grey
-          textColor: const Color(0xFF64748B),       // Slate Text
-          dotColor: const Color(0xFFF59E0B),        // Amber/Orange Dot
+          textColor: const Color(0xFF64748B), // Slate Text
+          dotColor: const Color(0xFFF59E0B), // Amber/Orange Dot
         );
     }
   }

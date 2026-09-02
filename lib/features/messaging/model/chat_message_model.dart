@@ -21,11 +21,6 @@ class ChatMessageModel {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'message': message,
-      'time': time,
-      'isMe': isMe,
-    };
+    return {'id': id, 'message': message, 'time': time, 'isMe': isMe};
   }
 }

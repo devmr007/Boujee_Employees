@@ -34,19 +34,15 @@ class AppLogger {
 
   /// Non-critical warnings
   static void warning(
-      Object? message, [
-        Object? error,
-        StackTrace? stackTrace,
-      ]) {
+    Object? message, [
+    Object? error,
+    StackTrace? stackTrace,
+  ]) {
     _logger.w(message, error: error, stackTrace: stackTrace);
   }
 
   /// Handled errors with error object and stack traces
-  static void error(
-      Object? message, {
-        Object? error,
-        StackTrace? stackTrace,
-      }) {
+  static void error(Object? message, {Object? error, StackTrace? stackTrace}) {
     _logger.e(
       message,
       error: error,
@@ -55,11 +51,7 @@ class AppLogger {
   }
 
   /// Fatal app errors or unrecoverable crashes
-  static void fatal(
-      Object? message, {
-        Object? error,
-        StackTrace? stackTrace,
-      }) {
+  static void fatal(Object? message, {Object? error, StackTrace? stackTrace}) {
     _logger.f(
       message,
       error: error,

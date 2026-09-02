@@ -67,7 +67,7 @@ class MessagingScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.r),
                 ),
                 child: Obx(
-                      () => Row(
+                  () => Row(
                     children: [
                       Expanded(
                         child: _buildTabButton(
@@ -113,9 +113,7 @@ class MessagingScreen extends StatelessWidget {
               child: Obx(() {
                 if (controller.isLoading.value) {
                   return const Center(
-                    child: CircularProgressIndicator(
-                      color: AppColors.primary,
-                    ),
+                    child: CircularProgressIndicator(color: AppColors.primary),
                   );
                 }
 

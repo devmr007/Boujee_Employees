@@ -138,42 +138,42 @@ class _CustomButtonState extends State<CustomButton> {
           child: Center(
             child: widget.isLoading
                 ? SizedBox(
-              width: widget.height * 0.45,
-              height: widget.height * 0.45,
-              child: CircularProgressIndicator(
-                strokeWidth: 2.5,
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  widget.loadingIndicatorColor ?? Colors.white,
-                ),
-              ),
-            )
+                    width: widget.height * 0.45,
+                    height: widget.height * 0.45,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2.5,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        widget.loadingIndicatorColor ?? Colors.white,
+                      ),
+                    ),
+                  )
                 : Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: widget.mainAxisAlignment,
-              children: [
-                if (widget.prefixWidget != null) ...[
-                  widget.prefixWidget!,
-                  SizedBox(width: widget.spacing),
-                ],
-                Flexible(
-                  child: CustomText(
-                    widget.text,
-                    font: widget.font,
-                    fontSize: widget.textStyle?.fontSize ?? 16,
-                    fontWeight:
-                    widget.textStyle?.fontWeight ?? FontWeight.bold,
-                    color: _effectiveTextColor,
-                    letterSpacing: widget.textStyle?.letterSpacing,
-                    height: widget.textStyle?.height,
-                    overflow: TextOverflow.ellipsis,
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: widget.mainAxisAlignment,
+                    children: [
+                      if (widget.prefixWidget != null) ...[
+                        widget.prefixWidget!,
+                        SizedBox(width: widget.spacing),
+                      ],
+                      Flexible(
+                        child: CustomText(
+                          widget.text,
+                          font: widget.font,
+                          fontSize: widget.textStyle?.fontSize ?? 16,
+                          fontWeight:
+                              widget.textStyle?.fontWeight ?? FontWeight.bold,
+                          color: _effectiveTextColor,
+                          letterSpacing: widget.textStyle?.letterSpacing,
+                          height: widget.textStyle?.height,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      if (widget.suffixWidget != null) ...[
+                        SizedBox(width: widget.spacing),
+                        widget.suffixWidget!,
+                      ],
+                    ],
                   ),
-                ),
-                if (widget.suffixWidget != null) ...[
-                  SizedBox(width: widget.spacing),
-                  widget.suffixWidget!,
-                ],
-              ],
-            ),
           ),
         ),
       ),

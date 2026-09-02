@@ -8,10 +8,7 @@ import '../../model/chat_message_model.dart';
 class ChatBubble extends StatelessWidget {
   final ChatMessageModel message;
 
-  const ChatBubble({
-    super.key,
-    required this.message,
-  });
+  const ChatBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +39,9 @@ class ChatBubble extends StatelessWidget {
           ],
         ),
         child: Column(
-          crossAxisAlignment:
-          message.isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+          crossAxisAlignment: message.isMe
+              ? CrossAxisAlignment.end
+              : CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomText(

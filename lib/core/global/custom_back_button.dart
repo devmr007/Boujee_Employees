@@ -7,23 +7,21 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import '../utils/constants/app_colors.dart';
 import '../utils/icon_path/icon_path.dart';
 
-class CustomBackButton extends StatelessWidget{
+class CustomBackButton extends StatelessWidget {
   const CustomBackButton({super.key});
-
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Get.back();
       },
       child: SvgPicture.asset(
         IconPath.arrowLeft,
         width: 24.w,
         height: 24.h,
-        colorFilter: ColorFilter.mode(AppColors.grey, BlendMode.srcIn)
+        colorFilter: ColorFilter.mode(AppColors.grey, BlendMode.srcIn),
       ),
     );
   }
-
 }

@@ -64,10 +64,10 @@ class NetworkCaller {
   }
 
   Future<ResponseData> postRequest(
-      String endpoint, {
-        Map<String, dynamic>? body,
-        String? token,
-      }) async {
+    String endpoint, {
+    Map<String, dynamic>? body,
+    String? token,
+  }) async {
     final Uri url = _parseUrl(endpoint);
     AppLogger.info('POST Request: $url');
     if (body != null) AppLogger.debug('Body: ${jsonEncode(body)}');
@@ -75,10 +75,10 @@ class NetworkCaller {
     try {
       final http.Response response = await http
           .post(
-        url,
-        headers: _getHeaders(token: token),
-        body: body != null ? jsonEncode(body) : null,
-      )
+            url,
+            headers: _getHeaders(token: token),
+            body: body != null ? jsonEncode(body) : null,
+          )
           .timeout(Duration(seconds: timeoutDuration));
 
       return _handleResponse(response);
@@ -88,10 +88,10 @@ class NetworkCaller {
   }
 
   Future<ResponseData> putRequest(
-      String endpoint, {
-        Map<String, dynamic>? body,
-        String? token,
-      }) async {
+    String endpoint, {
+    Map<String, dynamic>? body,
+    String? token,
+  }) async {
     final Uri url = _parseUrl(endpoint);
     AppLogger.info('PUT Request: $url');
     if (body != null) AppLogger.debug('Body: ${jsonEncode(body)}');
@@ -99,10 +99,10 @@ class NetworkCaller {
     try {
       final http.Response response = await http
           .put(
-        url,
-        headers: _getHeaders(token: token),
-        body: body != null ? jsonEncode(body) : null,
-      )
+            url,
+            headers: _getHeaders(token: token),
+            body: body != null ? jsonEncode(body) : null,
+          )
           .timeout(Duration(seconds: timeoutDuration));
 
       return _handleResponse(response);
@@ -112,10 +112,10 @@ class NetworkCaller {
   }
 
   Future<ResponseData> patchRequest(
-      String endpoint, {
-        Map<String, dynamic>? body,
-        String? token,
-      }) async {
+    String endpoint, {
+    Map<String, dynamic>? body,
+    String? token,
+  }) async {
     final Uri url = _parseUrl(endpoint);
     AppLogger.info('PATCH Request: $url');
     if (body != null) AppLogger.debug('Body: ${jsonEncode(body)}');
@@ -123,10 +123,10 @@ class NetworkCaller {
     try {
       final http.Response response = await http
           .patch(
-        url,
-        headers: _getHeaders(token: token),
-        body: body != null ? jsonEncode(body) : null,
-      )
+            url,
+            headers: _getHeaders(token: token),
+            body: body != null ? jsonEncode(body) : null,
+          )
           .timeout(Duration(seconds: timeoutDuration));
 
       return _handleResponse(response);
@@ -136,20 +136,20 @@ class NetworkCaller {
   }
 
   Future<ResponseData> deleteRequest(
-      String endpoint, {
-        Map<String, dynamic>? body,
-        String? token,
-      }) async {
+    String endpoint, {
+    Map<String, dynamic>? body,
+    String? token,
+  }) async {
     final Uri url = _parseUrl(endpoint);
     AppLogger.info('DELETE Request: $url');
 
     try {
       final http.Response response = await http
           .delete(
-        url,
-        headers: _getHeaders(token: token),
-        body: body != null ? jsonEncode(body) : null,
-      )
+            url,
+            headers: _getHeaders(token: token),
+            body: body != null ? jsonEncode(body) : null,
+          )
           .timeout(Duration(seconds: timeoutDuration));
 
       return _handleResponse(response);
@@ -164,11 +164,11 @@ class NetworkCaller {
 
   /// Single image upload request
   Future<ResponseData> postImageRequest(
-      String url, {
-        required File file,
-        String fileField = 'pickImage',
-        String? token,
-      }) async {
+    String url, {
+    required File file,
+    String fileField = 'pickImage',
+    String? token,
+  }) async {
     return patchMultipart(
       url,
       fileField: fileField,
@@ -180,12 +180,12 @@ class NetworkCaller {
 
   /// Single file multipart upload (PATCH/POST)
   Future<ResponseData> patchMultipart(
-      String url, {
-        required String fileField,
-        required File file,
-        String? token,
-        String method = 'PATCH',
-      }) async {
+    String url, {
+    required String fileField,
+    required File file,
+    String? token,
+    String method = 'PATCH',
+  }) async {
     try {
       final Uri parsedUrl = _parseUrl(url);
       AppLogger.info('$method Multipart Single: $parsedUrl');
@@ -217,13 +217,13 @@ class NetworkCaller {
 
   /// Multiple files + text fields
   Future<ResponseData> patchMultipartMultipleFiles(
-      String url, {
-        required String fileField,
-        required List<File> files,
-        Map<String, String>? extraFields,
-        String? token,
-        String method = 'PATCH',
-      }) async {
+    String url, {
+    required String fileField,
+    required List<File> files,
+    Map<String, String>? extraFields,
+    String? token,
+    String method = 'PATCH',
+  }) async {
     try {
       final Uri parsedUrl = _parseUrl(url);
       AppLogger.info('$method Multipart Multiple: $parsedUrl');
@@ -237,8 +237,9 @@ class NetworkCaller {
 
       for (final File file in files) {
         final String? mimeType = lookupMimeType(file.path);
-        final MediaType? contentType =
-        mimeType != null ? MediaType.parse(mimeType) : null;
+        final MediaType? contentType = mimeType != null
+            ? MediaType.parse(mimeType)
+            : null;
 
         request.files.add(
           await http.MultipartFile.fromPath(
@@ -360,7 +361,8 @@ class NetworkCaller {
     }
 
     // Extract custom error message from server response if available
-    String serverErrorMessage = _extractServerErrorMessage(decodedResponse) ??
+    String serverErrorMessage =
+        _extractServerErrorMessage(decodedResponse) ??
         _getFallbackErrorMessage(statusCode);
 
     return ResponseData(
@@ -416,7 +418,7 @@ class NetworkCaller {
         isSuccess: false,
         statusCode: 408,
         errorMessage:
-        'Request timed out. Please check your connection and try again.',
+            'Request timed out. Please check your connection and try again.',
         responseData: null,
       );
     } else if (error is SocketException || error is http.ClientException) {
@@ -424,7 +426,7 @@ class NetworkCaller {
         isSuccess: false,
         statusCode: 503,
         errorMessage:
-        'Network error occurred. Please check your connection and try again.',
+            'Network error occurred. Please check your connection and try again.',
         responseData: null,
       );
     } else {

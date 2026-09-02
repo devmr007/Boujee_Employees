@@ -100,11 +100,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    final resolvedTextStyle = widget.textStyle ??
-        const TextStyle(
-          fontSize: 14,
-          color: Colors.black87,
-        );
+    final resolvedTextStyle =
+        widget.textStyle ??
+        const TextStyle(fontSize: 14, color: Colors.black87);
 
     final Color defaultBorderColor = AppColors.primary.withValues(alpha: 0.15);
     final Color focusBorderColor = AppColors.primary;
@@ -153,11 +151,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
         errorStyle: widget.errorStyle,
         label: widget.labelText != null
             ? CustomText(
-          widget.labelText!,
-          font: widget.font,
-          color: Colors.grey[600],
-          fontSize: 14,
-        )
+                widget.labelText!,
+                font: widget.font,
+                color: Colors.grey[600],
+                fontSize: 14,
+              )
             : null,
         hintText: widget.hintText,
         hintStyle: _getFontWithStyle(
@@ -171,7 +169,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         prefixIcon: widget.prefixIcon,
         suffixIcon: effectiveSuffixIcon,
-        contentPadding: widget.contentPadding ??
+        contentPadding:
+            widget.contentPadding ??
             const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.borderRadius),

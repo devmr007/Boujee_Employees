@@ -12,7 +12,7 @@ class UploadPhotoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UpcomingAppointmentDetailsController controller =
-    Get.find<UpcomingAppointmentDetailsController>();
+        Get.find<UpcomingAppointmentDetailsController>();
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -71,12 +71,14 @@ class UploadPhotoScreen extends StatelessWidget {
                       color: AppColors.black,
                     ),
                     SizedBox(height: 8.h),
-                    Obx(() => _buildUploadCard(
-                      title: 'Upload Profile image',
-                      subtitle: 'Supports: JPG, PNG',
-                      imagePath: controller.beforePhotoPath.value,
-                      onPickTap: () => controller.pickBeforePhoto(),
-                    )),
+                    Obx(
+                      () => _buildUploadCard(
+                        title: 'Upload Profile image',
+                        subtitle: 'Supports: JPG, PNG',
+                        imagePath: controller.beforePhotoPath.value,
+                        onPickTap: () => controller.pickBeforePhoto(),
+                      ),
+                    ),
 
                     SizedBox(height: 20.h),
 
@@ -88,12 +90,14 @@ class UploadPhotoScreen extends StatelessWidget {
                       color: AppColors.black,
                     ),
                     SizedBox(height: 8.h),
-                    Obx(() => _buildUploadCard(
-                      title: 'Upload business license',
-                      subtitle: 'Supports: JPG, PNG, PDF',
-                      imagePath: controller.afterPhotoPath.value,
-                      onPickTap: () => controller.pickAfterPhoto(),
-                    )),
+                    Obx(
+                      () => _buildUploadCard(
+                        title: 'Upload business license',
+                        subtitle: 'Supports: JPG, PNG, PDF',
+                        imagePath: controller.afterPhotoPath.value,
+                        onPickTap: () => controller.pickAfterPhoto(),
+                      ),
+                    ),
 
                     SizedBox(height: 24.h),
                   ],
@@ -153,10 +157,7 @@ class UploadPhotoScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: Colors.grey.shade200,
-          width: 1.w,
-        ),
+        border: Border.all(color: Colors.grey.shade200, width: 1.w),
       ),
       child: Column(
         children: [

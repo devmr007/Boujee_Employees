@@ -104,7 +104,7 @@ class CertificateScreen extends StatelessWidget {
 
                     // Save Button
                     Obx(
-                          () => CustomButton(
+                      () => CustomButton(
                         text: 'Save',
                         onTap: controller.saveCertificates,
                         isLoading: controller.isLoading.value,
@@ -142,15 +142,12 @@ class CertificateScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
             child: isNetwork
                 ? Image.network(
-              imagePath,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) =>
-              const Center(child: Icon(Icons.broken_image)),
-            )
-                : Image.file(
-              File(imagePath),
-              fit: BoxFit.cover,
-            ),
+                    imagePath,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) =>
+                        const Center(child: Icon(Icons.broken_image)),
+                  )
+                : Image.file(File(imagePath), fit: BoxFit.cover),
           ),
         ),
 
@@ -257,7 +254,7 @@ class CertificateScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(
             (constraints.constrainWidth() / 10).floor(),
-                (_) => SizedBox(
+            (_) => SizedBox(
               width: 5.w,
               height: 1.h,
               child: const DecoratedBox(

@@ -10,19 +10,17 @@ import '../../features/employee_schedule/controller/scheduled_controller.dart';
 import '../../features/messaging/controller/messaging_controller.dart';
 import '../../features/splash/controller/splash_controller.dart';
 
-class AppBindings extends Bindings{
+class AppBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SplashController(),fenix: true);
-    Get.lazyPut(() => LoginController(),fenix: true);
-    Get.lazyPut(() => EmployeeNavController(),fenix: true);
-    Get.lazyPut(() => MessagingController(),fenix: true);
-    Get.lazyPut(() => EmployeeProfileController(),fenix: true);
-    Get.lazyPut(() => EditProfileController(),fenix: true);
-    Get.lazyPut(() => EmployeeHomeController(),fenix: true);
-    Get.lazyPut(() => UpcomingAppointmentDetailsController(),fenix: true);
-    Get.lazyPut(() => ScheduledController(),fenix: true);
-
+    Get.lazyPut(() => SplashController(), fenix: true);
+    Get.lazyPut(() => LoginController(), fenix: true);
+    Get.lazyPut(() => EmployeeNavController(), fenix: true);
+    Get.lazyPut(() => MessagingController(), fenix: true);
+    Get.lazyPut(() => EmployeeProfileController(), fenix: true);
+    Get.lazyPut(() => EditProfileController(), fenix: true);
+    Get.lazyPut(() => EmployeeHomeController(), fenix: true);
+    Get.lazyPut(() => UpcomingAppointmentDetailsController(), fenix: true);
+    Get.lazyPut(() => ScheduledController(), fenix: true);
   }
-
 }

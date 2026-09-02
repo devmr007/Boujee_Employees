@@ -5,7 +5,6 @@ import '../../../../../core/global/custom_text.dart';
 import '../../../../../core/utils/constants/app_colors.dart';
 import '../../../../core/global/custom_back_button.dart';
 
-
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
 

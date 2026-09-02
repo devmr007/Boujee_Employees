@@ -12,7 +12,7 @@ class EmployeeProfileScreen extends StatelessWidget {
   EmployeeProfileScreen({super.key});
 
   final EmployeeProfileController controller =
-  Get.find<EmployeeProfileController>();
+      Get.find<EmployeeProfileController>();
 
   @override
   Widget build(BuildContext context) {
@@ -84,8 +84,7 @@ class EmployeeProfileScreen extends StatelessWidget {
                       fontSize: 12.sp,
                       color: AppColors.bodyTextColor,
                     ),
-                    Icon(Icons.star_rounded,
-                        color: Colors.amber, size: 16.r),
+                    Icon(Icons.star_rounded, color: Colors.amber, size: 16.r),
                     CustomText(
                       ' ${data.rating} ',
                       fontSize: 12.sp,
@@ -116,13 +115,25 @@ class EmployeeProfileScreen extends StatelessWidget {
                     children: [
                       _buildInfoRow('Role', data.role, isBold: true),
                       const Divider(color: Color(0xFFF3F4F6), height: 20),
-                      _buildInfoRow('Employee ID', data.employeeId, isBold: true),
+                      _buildInfoRow(
+                        'Employee ID',
+                        data.employeeId,
+                        isBold: true,
+                      ),
                       const Divider(color: Color(0xFFF3F4F6), height: 20),
                       _buildInfoRow('Start Date', data.startDate, isBold: true),
                       const Divider(color: Color(0xFFF3F4F6), height: 20),
-                      _buildInfoRow('Experience', data.experience, isBold: true),
+                      _buildInfoRow(
+                        'Experience',
+                        data.experience,
+                        isBold: true,
+                      ),
                       const Divider(color: Color(0xFFF3F4F6), height: 20),
-                      _buildInfoRow('Working Hours', data.workingHours, isBold: true),
+                      _buildInfoRow(
+                        'Working Hours',
+                        data.workingHours,
+                        isBold: true,
+                      ),
                     ],
                   ),
                 ),
@@ -136,20 +147,23 @@ class EmployeeProfileScreen extends StatelessWidget {
                     children: data.certifications
                         .map(
                           (cert) => Row(
-                        children: [
-                          Text(cert.icon, style: TextStyle(fontSize: 16.sp)),
-                          SizedBox(width: 8.w),
-                          Expanded(
-                            child: CustomText(
-                              cert.title,
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.black,
-                            ),
+                            children: [
+                              Text(
+                                cert.icon,
+                                style: TextStyle(fontSize: 16.sp),
+                              ),
+                              SizedBox(width: 8.w),
+                              Expanded(
+                                child: CustomText(
+                                  cert.title,
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: AppColors.black,
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    )
+                        )
                         .toList(),
                   ),
                 ),
@@ -226,11 +240,7 @@ class EmployeeProfileScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CustomText(
-          label,
-          fontSize: 13.sp,
-          color: AppColors.bodyTextColor,
-        ),
+        CustomText(label, fontSize: 13.sp, color: AppColors.bodyTextColor),
         CustomText(
           value,
           fontSize: 13.sp,
@@ -240,7 +250,6 @@ class EmployeeProfileScreen extends StatelessWidget {
       ],
     );
   }
-
 
   Widget _buildMenuItem({
     required String iconPath,

@@ -11,7 +11,7 @@ class ServiceChecklistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UpcomingAppointmentDetailsController controller =
-    Get.find<UpcomingAppointmentDetailsController>();
+        Get.find<UpcomingAppointmentDetailsController>();
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -178,8 +178,7 @@ class ServiceChecklistScreen extends StatelessWidget {
                                       color: item.isDone
                                           ? const Color(0xFFC78330)
                                           : Colors.grey.shade100,
-                                      borderRadius:
-                                      BorderRadius.circular(6.r),
+                                      borderRadius: BorderRadius.circular(6.r),
                                       border: Border.all(
                                         color: item.isDone
                                             ? const Color(0xFFC78330)
@@ -189,10 +188,10 @@ class ServiceChecklistScreen extends StatelessWidget {
                                     ),
                                     child: item.isDone
                                         ? Icon(
-                                      Icons.check_rounded,
-                                      color: AppColors.white,
-                                      size: 16.r,
-                                    )
+                                            Icons.check_rounded,
+                                            color: AppColors.white,
+                                            size: 16.r,
+                                          )
                                         : null,
                                   ),
                                 ),
@@ -245,7 +244,7 @@ class ServiceChecklistScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText:
-                            'How did the session go for ${details.petName}?',
+                                'How did the session go for ${details.petName}?',
                             hintStyle: TextStyle(
                               fontSize: 13.sp,
                               color: Colors.grey.shade400,

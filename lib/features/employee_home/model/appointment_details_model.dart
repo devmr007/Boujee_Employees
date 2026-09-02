@@ -81,8 +81,9 @@ class AppointmentDetailsModel {
 
   int get totalChecklistCount => checklistItems.length;
 
-  double get checklistProgressRatio =>
-      totalChecklistCount == 0 ? 0.0 : completedChecklistCount / totalChecklistCount;
+  double get checklistProgressRatio => totalChecklistCount == 0
+      ? 0.0
+      : completedChecklistCount / totalChecklistCount;
 
   int get checklistPercentage => (checklistProgressRatio * 100).toInt();
 }

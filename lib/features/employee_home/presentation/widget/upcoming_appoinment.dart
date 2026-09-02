@@ -25,10 +25,7 @@ class UpcomingAppointmentWidget extends StatelessWidget {
         decoration: BoxDecoration(
           // Golden brown gradient background matching the screenshot
           gradient: const LinearGradient(
-            colors: [
-              Color(0xFF8B5E0A),
-              Color(0xFF634103),
-            ],
+            colors: [Color(0xFF8B5E0A), Color(0xFF634103)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -102,7 +99,10 @@ class UpcomingAppointmentWidget extends StatelessWidget {
                     color: AppColors.white,
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 4.h,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFF9E5442), // Reddish-pink ETA badge
                       borderRadius: BorderRadius.circular(12.r),

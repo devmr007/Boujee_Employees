@@ -11,7 +11,7 @@ class UpcomingAppointmentDetailsScreen extends StatelessWidget {
   UpcomingAppointmentDetailsScreen({super.key});
 
   final UpcomingAppointmentDetailsController controller =
-  Get.find<UpcomingAppointmentDetailsController>();
+      Get.find<UpcomingAppointmentDetailsController>();
 
   void _openStatusBottomSheet() {
     Get.toNamed(AppRoutes.appointmentStatus);
@@ -35,7 +35,10 @@ class UpcomingAppointmentDetailsScreen extends StatelessWidget {
                 children: [
                   // Header Title Section
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 12.h,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -88,7 +91,10 @@ class UpcomingAppointmentDetailsScreen extends StatelessWidget {
                               children: [
                                 _buildZoomButton(Icons.add, controller.zoomIn),
                                 SizedBox(height: 8.h),
-                                _buildZoomButton(Icons.remove, controller.zoomOut),
+                                _buildZoomButton(
+                                  Icons.remove,
+                                  controller.zoomOut,
+                                ),
                               ],
                             ),
                           ),
@@ -97,7 +103,9 @@ class UpcomingAppointmentDetailsScreen extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 120.h), // Space reserved for floating bottom card
+                  SizedBox(
+                    height: 120.h,
+                  ), // Space reserved for floating bottom card
                 ],
               ),
 
@@ -134,9 +142,14 @@ class UpcomingAppointmentDetailsScreen extends StatelessWidget {
                               color: Colors.grey.shade500,
                             ),
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 4.h,
+                              ),
                               decoration: BoxDecoration(
-                                color: const Color(0xFFFFEBF0), // Light pink background
+                                color: const Color(
+                                  0xFFFFEBF0,
+                                ), // Light pink background
                                 borderRadius: BorderRadius.circular(12.r),
                               ),
                               child: CustomText(
@@ -216,11 +229,7 @@ class UpcomingAppointmentDetailsScreen extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(
-          icon,
-          color: AppColors.black,
-          size: 20.r,
-        ),
+        child: Icon(icon, color: AppColors.black, size: 20.r),
       ),
     );
   }

@@ -13,7 +13,8 @@ class CustomPopupDialog extends StatelessWidget {
   final String? description;
   final String? iconPath; // Optional: Defaults to Shield Done
   final bool showImage; // Optional: Displays top illustration by default
-  final bool isDoubleButton; // Optional: Single button (default) or double button
+  final bool
+  isDoubleButton; // Optional: Single button (default) or double button
 
   // Primary Button Properties
   final String primaryButtonText;
@@ -198,7 +199,7 @@ class CustomPopupDialog extends StatelessWidget {
                 ],
               )
             else
-            // Single Primary Button
+              // Single Primary Button
               CustomButton(
                 text: primaryButtonText,
                 onTap: onPrimaryTap ?? () => Get.back(),

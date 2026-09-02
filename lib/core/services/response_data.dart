@@ -100,5 +100,5 @@ class ResponseData {
   @override
   String toString() =>
       'ResponseData(isSuccess: $isSuccess, statusCode: $statusCode, '
-          'errorMessage: $errorMessage, responseData: $responseData)';
+      'errorMessage: $errorMessage, responseData: $responseData)';
 }

@@ -50,7 +50,10 @@ class GoogleMapService {
   }
 
   /// Convert coordinates to a readable address
-  static Future<String> getAddressFromCoordinates(double lat, double lng) async {
+  static Future<String> getAddressFromCoordinates(
+    double lat,
+    double lng,
+  ) async {
     try {
       List<Placemark> placemarks = await placemarkFromCoordinates(lat, lng);
       if (placemarks.isNotEmpty) {

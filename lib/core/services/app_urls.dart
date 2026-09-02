@@ -7,5 +7,4 @@ class AppUrls {
 
   ///Vps base URL
   //static const String _baseUrl = "";
-
 }

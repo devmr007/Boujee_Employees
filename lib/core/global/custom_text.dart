@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-enum AppFont {
-  inter,
-  roboto,
-  poppins,
-  impact,
-}
+enum AppFont { inter, roboto, poppins, impact }
 
 class CustomText extends StatelessWidget {
   final String text;
@@ -31,26 +26,26 @@ class CustomText extends StatelessWidget {
 
   // 🚀 Fixed constructor parameter signatures:
   const CustomText(
-      this.text, {
-        super.key,
-        this.font = AppFont.inter,
-        this.fontSize,
-        this.fontWeight,
-        this.color,
-        this.textAlign,
-        this.overflow,
-        this.maxLines,
-        this.decoration,
-        this.letterSpacing,
-        this.height,
-        this.fontStyle,
-        this.textDirection,
-        this.textBaseline,
-        this.textWidthBasis,
-        this.textHeightBehavior,
-        this.locale,
-        this.softWrap,
-      });
+    this.text, {
+    super.key,
+    this.font = AppFont.inter,
+    this.fontSize,
+    this.fontWeight,
+    this.color,
+    this.textAlign,
+    this.overflow,
+    this.maxLines,
+    this.decoration,
+    this.letterSpacing,
+    this.height,
+    this.fontStyle,
+    this.textDirection,
+    this.textBaseline,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.locale,
+    this.softWrap,
+  });
 
   // Helper method to resolve the base font style
   TextStyle _getFontStyle() {

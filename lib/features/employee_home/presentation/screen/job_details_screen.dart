@@ -452,11 +452,8 @@ class JobDetailsScreen extends StatelessWidget {
           width: radius * 2,
           height: radius * 2,
           fit: BoxFit.cover,
-          errorBuilder: (_, _, _) => Icon(
-            Icons.person,
-            size: radius,
-            color: AppColors.greyText,
-          ),
+          errorBuilder: (_, _, _) =>
+              Icon(Icons.person, size: radius, color: AppColors.greyText),
         ),
       ),
     );

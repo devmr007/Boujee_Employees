@@ -61,7 +61,10 @@ class JobsViewAllScreen extends StatelessWidget {
 
                 return ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
+                  ),
                   itemCount: jobs.length,
                   itemBuilder: (context, index) {
                     final job = jobs[index];

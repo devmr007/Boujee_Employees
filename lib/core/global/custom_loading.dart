@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/constants/app_colors.dart';
 
-enum LoadingType {
-  circularDots,
-  waveBars,
-}
+enum LoadingType { circularDots, waveBars }
 
 class CustomLoading extends StatefulWidget {
   final LoadingType type;
@@ -35,10 +32,8 @@ class _CustomLoadingState extends State<CustomLoading>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: widget.duration,
-    )..repeat();
+    _controller = AnimationController(vsync: this, duration: widget.duration)
+      ..repeat();
   }
 
   @override
@@ -54,15 +49,12 @@ class _CustomLoadingState extends State<CustomLoading>
       height: widget.size,
       child: CustomPaint(
         painter: widget.type == LoadingType.circularDots
-            ? _CircularDotsPainter(
-          animation: _controller,
-          color: widget.color,
-        )
+            ? _CircularDotsPainter(animation: _controller, color: widget.color)
             : _WaveBarsPainter(
-          animation: _controller,
-          primaryColor: widget.color,
-          secondaryColor: widget.secondaryColor ?? widget.color,
-        ),
+                animation: _controller,
+                primaryColor: widget.color,
+                secondaryColor: widget.secondaryColor ?? widget.color,
+              ),
       ),
     );
   }
@@ -76,10 +68,8 @@ class _CircularDotsPainter extends CustomPainter {
   final Color color;
   static const int dotCount = 8;
 
-  _CircularDotsPainter({
-    required this.animation,
-    required this.color,
-  }) : super(repaint: animation);
+  _CircularDotsPainter({required this.animation, required this.color})
+    : super(repaint: animation);
 
   @override
   void paint(Canvas canvas, Size size) {

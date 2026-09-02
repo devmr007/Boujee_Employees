@@ -11,7 +11,8 @@ import '../../../employee_profile/controller/employee_profile_controller.dart';
 class EmployeeHeader extends StatelessWidget {
   EmployeeHeader({super.key});
 
-  final EmployeeProfileController controller = Get.find<EmployeeProfileController>();
+  final EmployeeProfileController controller =
+      Get.find<EmployeeProfileController>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,7 @@ class EmployeeHeader extends StatelessWidget {
 
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: Colors.grey.shade50,
-        ),
+        decoration: BoxDecoration(color: Colors.grey.shade50),
         child: Row(
           children: [
             // Avatar with Online Status Indicator
@@ -38,8 +37,8 @@ class EmployeeHeader extends StatelessWidget {
                       : null,
                   onBackgroundImageError:
                       avatarUrl != null && avatarUrl.isNotEmpty
-                          ? (_, _) {}
-                          : null,
+                      ? (_, _) {}
+                      : null,
                   child: avatarUrl == null || avatarUrl.isEmpty
                       ? Icon(Icons.person, color: Colors.grey, size: 28.r)
                       : null,
@@ -53,10 +52,7 @@ class EmployeeHeader extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(0xFF4CAF50), // Online green
                       shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppColors.white,
-                        width: 2.w,
-                      ),
+                      border: Border.all(color: AppColors.white, width: 2.w),
                     ),
                   ),
                 ),
@@ -110,7 +106,7 @@ class EmployeeHeader extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     SvgPicture.asset(
-                      IconPath.notificationBell ,
+                      IconPath.notificationBell,
                       width: 22.r,
                       height: 22.r,
                       colorFilter: const ColorFilter.mode(

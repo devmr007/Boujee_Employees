@@ -31,7 +31,7 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: CustomBackButton()
+                    child: CustomBackButton(),
                   ),
                   CustomText(
                     'Edit Profile',
@@ -66,20 +66,20 @@ class EditProfileScreen extends StatelessWidget {
                               child: ClipOval(
                                 child: imagePath.isNotEmpty
                                     ? Image.file(
-                                  File(imagePath),
-                                  fit: BoxFit.cover,
-                                )
+                                        File(imagePath),
+                                        fit: BoxFit.cover,
+                                      )
                                     : Image.network(
-                                  controller.avatarUrl.value,
-                                  fit: BoxFit.cover,
-                                  errorBuilder:
-                                      (context, error, stackTrace) =>
-                                      Icon(
-                                        Icons.person,
-                                        size: 50.r,
-                                        color: Colors.grey,
+                                        controller.avatarUrl.value,
+                                        fit: BoxFit.cover,
+                                        errorBuilder:
+                                            (context, error, stackTrace) =>
+                                                Icon(
+                                                  Icons.person,
+                                                  size: 50.r,
+                                                  color: Colors.grey,
+                                                ),
                                       ),
-                                ),
                               ),
                             );
                           }),
@@ -147,7 +147,7 @@ class EditProfileScreen extends StatelessWidget {
                     // Role Dropdown
                     _buildFieldLabel('Role'),
                     Obx(
-                          () => CustomDropdownField(
+                      () => CustomDropdownField(
                         value: controller.selectedRole.value,
                         items: controller.roles,
                         hintText: 'Select role',
@@ -164,7 +164,7 @@ class EditProfileScreen extends StatelessWidget {
                     // Gender Dropdown
                     _buildFieldLabel('Gender'),
                     Obx(
-                          () => CustomDropdownField(
+                      () => CustomDropdownField(
                         value: controller.selectedGender.value,
                         items: controller.genders,
                         hintText: 'Select gender',
@@ -190,7 +190,7 @@ class EditProfileScreen extends StatelessWidget {
 
                     // Custom Save Button
                     Obx(
-                          () => CustomButton(
+                      () => CustomButton(
                         text: 'Save',
                         onTap: controller.saveProfile,
                         isLoading: controller.isLoading.value,

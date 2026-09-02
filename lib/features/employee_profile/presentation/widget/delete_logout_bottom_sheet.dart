@@ -6,7 +6,6 @@ import '../../../../../core/global/custom_button.dart';
 import '../../../../../core/global/custom_text.dart';
 import '../../../../../core/utils/constants/app_colors.dart';
 
-
 class DeleteLogoutBottomSheet extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -68,9 +67,7 @@ class DeleteLogoutBottomSheet extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 28.h),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(32.r),
-        ),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -107,7 +104,9 @@ class DeleteLogoutBottomSheet extends StatelessWidget {
                   child: TextButton(
                     onPressed: onCancel ?? () => Get.back(),
                     style: TextButton.styleFrom(
-                      backgroundColor: const Color(0xFFFFF2EE), // Soft tint matching screenshot
+                      backgroundColor: const Color(
+                        0xFFFFF2EE,
+                      ), // Soft tint matching screenshot
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24.r),
                       ),

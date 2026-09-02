@@ -12,7 +12,7 @@ class AppointmentStatusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UpcomingAppointmentDetailsController controller =
-    Get.find<UpcomingAppointmentDetailsController>();
+        Get.find<UpcomingAppointmentDetailsController>();
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -121,12 +121,11 @@ class AppointmentStatusScreen extends StatelessWidget {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(10.r),
                               child: LinearProgressIndicator(
-                                value:
-                                details.currentStep / details.totalSteps,
-                                backgroundColor:
-                                AppColors.white.withValues(alpha: 0.3),
-                                valueColor:
-                                const AlwaysStoppedAnimation<Color>(
+                                value: details.currentStep / details.totalSteps,
+                                backgroundColor: AppColors.white.withValues(
+                                  alpha: 0.3,
+                                ),
+                                valueColor: const AlwaysStoppedAnimation<Color>(
                                   AppColors.white,
                                 ),
                                 minHeight: 6.h,
@@ -165,8 +164,9 @@ class AppointmentStatusScreen extends StatelessWidget {
                             SizedBox(height: 16.h),
 
                             // Steps List
-                            ...List.generate(details.progressSteps.length,
-                                    (index) {
+                            ...List.generate(details.progressSteps.length, (
+                              index,
+                            ) {
                               final step = details.progressSteps[index];
                               final isLast =
                                   index == details.progressSteps.length - 1;
@@ -312,10 +312,7 @@ class AppointmentStatusScreen extends StatelessWidget {
                 width: 22.r,
                 height: 22.r,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.grey.shade300,
-                    width: 1.5.w,
-                  ),
+                  border: Border.all(color: Colors.grey.shade300, width: 1.5.w),
                   borderRadius: BorderRadius.circular(6.r),
                 ),
               ),
@@ -325,8 +322,9 @@ class AppointmentStatusScreen extends StatelessWidget {
               Container(
                 width: 2.w,
                 height: 26.h,
-                color:
-                isCompleted ? const Color(0xFF4CAF50) : Colors.grey.shade200,
+                color: isCompleted
+                    ? const Color(0xFF4CAF50)
+                    : Colors.grey.shade200,
               ),
           ],
         ),
@@ -340,13 +338,14 @@ class AppointmentStatusScreen extends StatelessWidget {
               CustomText(
                 step.title,
                 fontSize: 14.sp,
-                fontWeight:
-                isCurrent || isCompleted ? FontWeight.bold : FontWeight.w500,
+                fontWeight: isCurrent || isCompleted
+                    ? FontWeight.bold
+                    : FontWeight.w500,
                 color: isCurrent
                     ? const Color(0xFF2563EB) // Highlight active step blue
                     : (isCompleted
-                    ? const Color(0xFF4CAF50)
-                    : Colors.grey.shade500),
+                          ? const Color(0xFF4CAF50)
+                          : Colors.grey.shade500),
               ),
               if (step.subtitle != null) ...[
                 SizedBox(height: 2.h),

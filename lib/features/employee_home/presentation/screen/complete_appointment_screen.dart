@@ -11,7 +11,7 @@ class CompleteAppointmentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UpcomingAppointmentDetailsController controller =
-    Get.find<UpcomingAppointmentDetailsController>();
+        Get.find<UpcomingAppointmentDetailsController>();
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -205,10 +205,7 @@ class CompleteAppointmentScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: Colors.grey.shade200,
-          width: 1.w,
-        ),
+        border: Border.all(color: Colors.grey.shade200, width: 1.w),
       ),
       child: Column(
         children: [
@@ -237,10 +234,7 @@ class CompleteAppointmentScreen extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      decoration: BoxDecoration(
-        color: color,
-        shape: BoxShape.circle,
-      ),
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
     );
   }
 }

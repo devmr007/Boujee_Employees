@@ -9,7 +9,6 @@ import '../widget/employee_stats_summary.dart';
 import '../widget/job_tile.dart';
 import '../widget/upcoming_appoinment.dart';
 
-
 class EmployeeHome extends StatelessWidget {
   EmployeeHome({super.key});
 
@@ -70,7 +69,9 @@ class EmployeeHome extends StatelessWidget {
                             'View All',
                             fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
-                            color: const Color(0xFFC78330), // Golden brown accent
+                            color: const Color(
+                              0xFFC78330,
+                            ), // Golden brown accent
                           ),
                         ),
                       ],

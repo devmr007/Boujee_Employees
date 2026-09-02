@@ -40,9 +40,10 @@ class EmployeeProfileModel {
       startDate: json['start_date'] ?? '',
       experience: json['experience'] ?? '',
       workingHours: json['working_hours'] ?? '',
-      certifications: (json['certifications'] as List<dynamic>?)
-          ?.map((item) => CertificationModel.fromJson(item))
-          .toList() ??
+      certifications:
+          (json['certifications'] as List<dynamic>?)
+              ?.map((item) => CertificationModel.fromJson(item))
+              .toList() ??
           [],
     );
   }
@@ -69,10 +70,7 @@ class CertificationModel {
   final String title;
   final String icon;
 
-  CertificationModel({
-    required this.title,
-    this.icon = '🏅',
-  });
+  CertificationModel({required this.title, this.icon = '🏅'});
 
   factory CertificationModel.fromJson(Map<String, dynamic> json) {
     return CertificationModel(
@@ -82,9 +80,6 @@ class CertificationModel {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'title': title,
-      'icon': icon,
-    };
+    return {'title': title, 'icon': icon};
   }
 }
